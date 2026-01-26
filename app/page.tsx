@@ -1,5 +1,6 @@
 import Container from "./components/Container";
 import Hero from "./components/Hero";
+import Experience from "./components/Experience";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
 
     <Container>
       <Hero />
+      <Experience />
     </Container>
     </div>
   );
