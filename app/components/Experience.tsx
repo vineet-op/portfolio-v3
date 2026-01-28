@@ -9,8 +9,8 @@ import Image from "next/image";
 
 export default function Experience() {
     return (
-        <section className="flex flex-col p-10 border-b border-dashed pb-16">
-            <h2 className="text-3xl font-serif tracking-wide">Experience</h2>
+        <section className="flex flex-col px-10 py-7 border-b border-dashed">
+            <h2 className="text-3xl font-serif tracking-wide mb-12">Experience</h2>
             <ExperienceCard imageLink="/createxp.jpg" companyName="CreateXp Labs" position="Full-Stack Engineer" startDate="Augest 2024" endDate="Present" description="
         • Developed and maintained web applications using React, Node.js, and MongoDB.
         • Implemented responsive design and user-friendly interfaces.
@@ -23,12 +23,7 @@ export default function Experience() {
         • Collaborated with cross-functional teams to deliver high-quality software solutions.
         • Optimized application performance and scalability."
             />
-            <ExperienceCard imageLink="/createxp.jpg" companyName="CreateXp Labs" position="Full-Stack Engineer" startDate="Augest 2024" endDate="Present" description="
-        • Developed and maintained web applications using React, Node.js, and MongoDB.
-        • Implemented responsive design and user-friendly interfaces.
-        • Collaborated with cross-functional teams to deliver high-quality software solutions.
-        • Optimized application performance and scalability."
-            />
+
         </section>
     );
 }

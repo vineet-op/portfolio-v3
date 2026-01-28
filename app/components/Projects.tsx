@@ -12,17 +12,38 @@ export default function Projects() {
         {
             title: "Prep Suite",
             description: "Prep Suite is an AI-powered mock interview platform designed to help users practice, improve, and ace technical interviews — all in one place.",
-            imageLink: "/prep-suite.png",
+            imageLink: "/ps.png",
             githubLink: "https://github.com/vineet-op/interview-suite",
             deployLink: "https://interview-suite.vercel.app/",
+        },
+        {
+            title: "Screenshot AI",
+            description: "Screenshot AI is an intelligent screenshot manager powered by AI that helps you automatically organize, categorize, and analyze your screenshots.",
+            imageLink: "/ss.png",
+            githubLink: "https://github.com/vineet-op/screenshot-ai",
+            deployLink: "https://screenshot-ai-iota.vercel.app/",
+        },
+        {
+            title: "TrueFeedback",
+            description: "TrueFeedback is a platform where users can provide anonymous feedback to individuals or organizations without revealing their identity.",
+            imageLink: "/tr.png",
+            githubLink: "https://github.com/vineet-op/Truefeedback",
+            deployLink: "https://truefeedback.vercel.app/",
+        },
+        {
+            title: "Matiks",
+            description: "Redesign Matiks website where users can solve mental math puzzles and rank on leaderboard.",
+            imageLink: "/mt.png",
+            githubLink: "https://github.com/vineet-op/Matiks",
+            deployLink: "https://matiks.vercel.app/",
         },
     ];
 
     return (
         <>
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10 border-b border-dashed pb-16">
-                <h2 className="md:col-span-2 text-3xl font-serif tracking-wide">
-                    Projects
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-4 py-7 pb-16 px-10 border-b border-dashed">
+                <h2 className="md:col-span-2 text-3xl font-serif tracking-wide mb-12">
+                    Proof of Work
                 </h2>
 
                 {projects.map((project) => (
@@ -64,7 +85,7 @@ export default function Projects() {
                                 alt={selectedProject.title}
                                 width={800}
                                 height={800}
-                                className="w-full px-5 rounded-2xl object-fill"
+                                className="w-full px-5 rounded-2xl object-cover"
                             />
 
                             <div className="p-6 space-y-4">
@@ -116,14 +137,14 @@ export function ProjectCard({ title, imageLink, onClick }: ProjectCardProps) {
                 initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.3 }}
-                className="w-full bg-yellow-200 h-full lg:h-96 rounded-2xl cursor-pointer overflow-hidden"
+                className="w-full bg-transparent h-full lg:h-96 rounded-2xl cursor-pointer overflow-hidden"
             >
                 <Image
                     src={imageLink}
                     alt={title}
                     width={500}
                     height={500}
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full rounded-2xl"
                 />
             </motion.div>
         </div>
