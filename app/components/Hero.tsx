@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section className="flex flex-col pb-10 border-b border-dashed">
-      <div className="flex gap-10 p-10">
+      <div className="flex flex-col lg:flex-row gap-5 p-10">
 
         {/* //Hero Image */}
         <motion.div
@@ -17,7 +17,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.3 }}
           className="flex justify-start items-center">
-          <Image src="/pfp.jpg" alt="Hero-Image" width={100} height={100} className="size-40 object-cover rounded-full" />
+          <Image src="/pfp.jpg" alt="Hero-Image" width={100} height={100} className="size-20 md:size-40 object-cover rounded-full" />
         </motion.div>
 
         {/* //Name and Description */}
@@ -26,7 +26,7 @@ export default function Hero() {
             <h1 className="font-serif text-3xl">
               <AnimatedText text="Hello there👋" />
             </h1>
-            <p className="font-serif text-4xl">
+            <p className="font-serif text-2xl md:text-4xl">
               <AnimatedText text="I'm Vineet Design Engineer" />
             </p>
           </div>
@@ -38,13 +38,15 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+
       <motion.div
         initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.5, delay: 0.6 }}
         className="flex justify-center items-center"
       >
-        <Image src={"./pacman.svg"} alt="Pacman" width={2000} height={1000} className="max-w-4xl h-auto object-fill mx-auto " />
+        <Image src={"./pacman.svg"} alt="Pacman" width={2000} height={1000} className="lg:max-w-6xl max-w-lg h-auto object-fill mx-auto px-25" />
       </motion.div>
     </section>
   );

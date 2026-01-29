@@ -41,18 +41,22 @@ export default function Projects() {
 
     return (
         <>
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-4 py-7 pb-16 px-10 border-b border-dashed">
-                <h2 className="md:col-span-2 text-3xl font-serif tracking-wide mb-12">
+            <section className="flex flex-col py-7 pb-16">
+                <div className="w-full border-b border-dashed mb-6" />
+                <h2 className="text-xl md:text-3xl font-serif tracking-wide mb-6 px-5 md:px-10">
                     Proof of Work
                 </h2>
+                <div className="w-full border-b border-dashed mb-8" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:px-10 px-5">
 
-                {projects.map((project) => (
-                    <ProjectCard
-                        key={project.title}
-                        {...project}
-                        onClick={() => setSelectedProject(project)}
-                    />
-                ))}
+                    {projects.map((project) => (
+                        <ProjectCard
+                            key={project.title}
+                            {...project}
+                            onClick={() => setSelectedProject(project)}
+                        />
+                    ))}
+                </div>
             </section>
 
             {/* Overlay Modal */}
@@ -130,14 +134,14 @@ interface ProjectCardProps {
 
 export function ProjectCard({ title, imageLink, onClick }: ProjectCardProps) {
     return (
-        <div className="hover:scale-105 transition-transform">
+        <div className="hover:scale-105 transition-transform w-full">
             <motion.div
                 layoutId={`project-${title}`}
                 onClick={onClick}
                 initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.3 }}
-                className="w-full bg-transparent h-full lg:h-96 rounded-2xl cursor-pointer overflow-hidden"
+                className="w-full bg-transparent h-64 sm:h-80 lg:h-96 rounded-2xl cursor-pointer overflow-hidden"
             >
                 <Image
                     src={imageLink}

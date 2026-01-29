@@ -6,16 +6,12 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full bg-neutral-950">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-neutral-950">
       <Container className="relative">
         <Hero />
-        <div className="w-full border border-b border-dashed absolute top-128 left-0" />
         <Experience />
-        {/* <div className="w-full border border-b border-dashed absolute top-1/4 left-0" /> */}
         <Projects />
-        <div className="w-full border border-b border-dashed absolute top-224 left-0" />
         <Contact />
-        <div className="w-full border border-b border-dashed absolute bottom-30 left-0" />
       </Container>
     </div>
   );
