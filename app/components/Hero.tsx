@@ -31,7 +31,7 @@ export default function Hero() {
             </p>
           </div>
           {/* About me */}
-          <div className="flex flex-col font-inter justify-center items-start text-zinc-300 max-w-2xl">
+          <div className="flex flex-col font-inter justify-center items-start text-muted-foreground max-w-2xl">
             <AnimatedText
               text="22 y/o dev based in India 💓 I refactor UIs, build landing pages, and sweating the small details so the product doesn't have to." delay={0.2}
             />

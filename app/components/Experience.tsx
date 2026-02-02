@@ -48,7 +48,7 @@ export default function Experience() {
         • Optimized application performance and scalability."
                     index={0}
                 />
-                <ExperienceCard
+                {/* <ExperienceCard
                     imageLink="/createxp.jpg"
                     companyName="CreateXp Labs"
                     position="Full-Stack Engineer"
@@ -60,7 +60,7 @@ export default function Experience() {
         • Collaborated with cross-functional teams to deliver high-quality software solutions.
         • Optimized application performance and scalability."
                     index={1}
-                />
+                /> */}
             </div>
         </section>
     );
@@ -86,7 +86,7 @@ export function ExperienceCard({ imageLink, companyName, position, startDate, en
 
     return (
         <motion.div
-            className="flex flex-col mt-5 rounded-2xl border-border border"
+            className="flex flex-col mt-5 rounded-2xl border-border border border-dashed"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -103,15 +103,15 @@ export function ExperienceCard({ imageLink, companyName, position, startDate, en
                             <div className="flex flex-row items-center gap-3 md:gap-5">
                                 <Image src={imageLink} alt={companyName} width={100} height={100} className="rounded-full size-10 md:size-12 shrink-0" />
                                 <div className="flex flex-col gap-1">
-                                    <span className="text-base md:text-lg lg:text-xl font-serif tracking-wider text-zinc-100">{companyName}</span>
-                                    <p className="text-xs md:text-sm font-inter tracking-tighter text-zinc-300">{position}</p>
+                                    <span className="text-base md:text-lg lg:text-xl font-serif tracking-wider text-foreground">{companyName}</span>
+                                    <p className="text-xs md:text-sm font-inter tracking-tighter text-muted-foreground">{position}</p>
                                 </div>
                             </div>
-                            <p className="text-xs md:text-sm font-inter tracking-tighter text-zinc-300 whitespace-nowrap mt-1 ml-13 md:ml-0">{startDate} - {endDate}</p>
+                            <p className="text-xs md:text-sm font-inter tracking-tighter text-muted-foreground whitespace-nowrap mt-1 ml-13 md:ml-0">{startDate} - {endDate}</p>
                         </div>
                     </AccordionTrigger>
                     <AccordionContent>
-                        <ul className="list-disc list-inside space-y-2 font-inter mt-3 md:mt-5 pl-2 md:pl-4 tracking-tighter text-xs md:text-sm text-zinc-300">
+                        <ul className="list-disc list-inside space-y-2 font-inter mt-3 md:mt-5 pl-2 md:pl-4 tracking-tighter text-xs md:text-sm light:text-muted-foreground">
                             {points.map((point, index) => (
                                 <li key={index} className="leading-relaxed">{point}</li>
                             ))}

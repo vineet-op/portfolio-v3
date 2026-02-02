@@ -31,27 +31,27 @@ export default function Contact() {
             <div className="px-5 flex items-center justify-between gap-5 lg:flex-row flex-col md:px-10 lg:px-10">
                 <div className="flex flex-row justify-start lg:gap-3 gap-1.5 md:gap-4 py-2 md:py-4">
                     <ContactCard
-                        icon={<TwitterIcon size={24} />}
+                        icon={<TwitterIcon size={24} className="text-muted-foreground" />}
                         href="https://x.com/Vineet2OP"
                         label="Twitter"
                         hoverColor="hover:bg-[#1DA1F2]" />
                     <ContactCard
-                        icon={<LinkedinIcon size={24} />}
+                        icon={<LinkedinIcon size={24} className="text-muted-foreground" />}
                         href="https://www.linkedin.com/in/vineet-op/"
                         label="LinkedIn"
                         hoverColor="hover:bg-[#0A66C2]" />
                     <ContactCard
-                        icon={<Mail size={24} />}
+                        icon={<Mail size={24} className="text-muted-foreground" />}
                         href="mailto:vineet290403@gmail.com"
                         label="Email"
                         hoverColor="hover:bg-[#EA4335]" />
-                    <ContactCard icon={<GithubIcon size={24} />}
+                    <ContactCard icon={<GithubIcon size={24} className="text-muted-foreground" />}
                         href="https://github.com/vineet-op"
                         label="GitHub"
                         hoverColor="hover:bg-[#333333]" />
                 </div>
                 <motion.div
-                    className="text-xs tracking-tight lg:text-sm font-inter text-zinc-300"
+                    className="text-xs tracking-tight lg:text-sm font-inter text-muted-foreground selection:bg-green-400 selection:text-gray-900"
                     initial={{ opacity: 0, x: -60, filter: "blur(12px)" }}
                     whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                     viewport={{ once: true }}
@@ -77,10 +77,10 @@ export function ContactCard({ icon, href, label, hoverColor }: ContactCardProps)
             <Button
                 variant="outline"
                 size="icon-sm"
-                className={`flex cursor-pointer w-fit bg-transparent p-2 md:p-4 rounded-2xl flex-row items-center hover:scale-105 active:scale-95 transition-all duration-300 hover:text-white hover:border-transparent ${hoverColor}`}
+                className={`flex cursor-pointer w-fit border-dashed bg-transparent p-2 md:p-4 rounded-2xl flex-row items-center hover:scale-105 active:scale-95 transition-all duration-300 hover:text-foreground hover:border-transparent ${hoverColor}`}
             >
                 {icon}
-                <p className="text-xs md:text-sm font-inter tracking-wide">{label}</p>
+                <p className="text-xs md:text-sm font-inter tracking-wide text-muted-foreground">{label}</p>
             </Button>
         </a>
     );

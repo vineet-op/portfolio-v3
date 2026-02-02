@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "./providers/Lenis";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -27,13 +28,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-x-hidden max-w-full">
+    <html lang="en" className="dark overflow-x-hidden max-w-full">
       <body
         className={`${instrumentSerif.variable} ${inter.variable} antialiased overflow-x-hidden max-w-full`}
       >
-        <LenisProvider>
-          {children}
-        </LenisProvider>
+        <ThemeProvider>
+          <LenisProvider>
+            {children}
+          </LenisProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

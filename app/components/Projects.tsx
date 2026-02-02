@@ -81,7 +81,7 @@ export default function Projects() {
             <AnimatePresence mode="wait">
                 {selectedProject && (
                     <motion.div
-                        className="fixed inset-0 bg-primary/80 backdrop-blur-xs z-50 flex items-center justify-center p-6"
+                        className="fixed inset-0 bg-black/60 dark:bg-primary/80 backdrop-blur-xs z-50 flex items-center justify-center p-6"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -89,16 +89,16 @@ export default function Projects() {
                     >
                         <motion.div
                             layoutId={`project-${selectedProject.title}`}
-                            className=" bg-primary border-2 border-border rounded-2xl max-w-2xl w-full  overflow-hidden"
+                            className="bg-white dark:bg-primary border-2 border-border rounded-2xl max-w-2xl w-full overflow-hidden"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Close button */}
                             <div className="flex justify-end p-4">
                                 <button
                                     onClick={() => setSelectedProject(null)}
-                                    className="bg-primary text-white rounded-full p-2"
+                                    className="bg-secondary hover:bg-accent rounded-full p-2 transition-colors"
                                 >
-                                    <X size={18} className="text-white" />
+                                    <X size={18} className="text-foreground" />
                                 </button>
                             </div>
 
@@ -110,15 +110,15 @@ export default function Projects() {
                                 className="w-full px-5 rounded-2xl object-cover"
                             />
 
-                            <div className="p-6 space-y-4">
-                                <h3 className="text-2xl font-serif tracking-wide">{selectedProject.title}</h3>
-                                <p className=" text-zinc-300 font-inter">{selectedProject.description}</p>
+                            <div className="p-6 space-y-2">
+                                <h3 className="text-2xl font-serif tracking-wide text-foreground">{selectedProject.title}</h3>
+                                <p className="text-muted-foreground font-inter">{selectedProject.description}</p>
 
                                 <div className="flex gap-4 mt-4">
                                     <a
                                         href={selectedProject.githubLink}
                                         target="_blank"
-                                        className="font-inter flex items-center gap-1"
+                                        className="font-inter flex items-center gap-1 text-foreground hover:text-muted-foreground transition-colors"
                                     >
                                         <GithubIcon size={18} />
                                         GitHub
@@ -126,7 +126,7 @@ export default function Projects() {
                                     <a
                                         href={selectedProject.deployLink}
                                         target="_blank"
-                                        className="font-inter flex items-center gap-1"
+                                        className="font-inter flex items-center gap-1 text-foreground hover:text-muted-foreground transition-colors"
                                     >
                                         <Link size={18} />
                                         Live
