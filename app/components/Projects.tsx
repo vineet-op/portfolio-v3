@@ -41,12 +41,30 @@ export default function Projects() {
 
     return (
         <>
-            <section className="flex flex-col py-7 pb-16">
-                <div className="w-full border-b border-dashed mb-6" />
+            <motion.section
+                className="flex flex-col py-7 pb-16"
+                initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3 }}
+            >
+                <motion.div
+                    className="w-full border-b border-dashed mb-6"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                />
                 <h2 className="text-xl md:text-3xl font-serif tracking-wide mb-6 px-5 md:px-10">
                     Proof of Work
                 </h2>
-                <div className="w-full border-b border-dashed mb-8" />
+                <motion.div
+                    className="w-full border-b border-dashed mb-8"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:px-10 px-5">
 
                     {projects.map((project) => (
@@ -57,7 +75,7 @@ export default function Projects() {
                         />
                     ))}
                 </div>
-            </section>
+            </motion.section>
 
             {/* Overlay Modal */}
             <AnimatePresence mode="wait">
@@ -139,7 +157,8 @@ export function ProjectCard({ title, imageLink, onClick }: ProjectCardProps) {
                 layoutId={`project-${title}`}
                 onClick={onClick}
                 initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.3 }}
                 className="w-full bg-transparent h-64 sm:h-80 lg:h-96 rounded-2xl cursor-pointer overflow-hidden"
             >

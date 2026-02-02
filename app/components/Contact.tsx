@@ -1,12 +1,34 @@
+'use client';
+
 import { GithubIcon, LinkedinIcon, Mail, TwitterIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
+
 export default function Contact() {
     return (
-        <section className="flex flex-col py-6">
-            <div className="w-full border-b border-dashed mb-6" />
+        <motion.section
+            className="flex flex-col py-6"
+            initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3 }}
+        >
+            <motion.div
+                className="w-full border-b border-dashed mb-6"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            />
             <h2 className="text-xl md:text-3xl font-serif tracking-wide mb-6 px-6 md:px-10">Find Me Here</h2>
-            <div className="w-full border-b border-dashed mb-4" />
-            <div className="px-5 md:px-10 lg:px-10">
+            <motion.div
+                className="w-full border-b border-dashed mb-4"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            />
+            <div className="px-5 flex items-center justify-between gap-5 lg:flex-row flex-col md:px-10 lg:px-10">
                 <div className="flex flex-row justify-start lg:gap-3 gap-1.5 md:gap-4 py-2 md:py-4">
                     <ContactCard
                         icon={<TwitterIcon size={24} />}
@@ -28,8 +50,17 @@ export default function Contact() {
                         label="GitHub"
                         hoverColor="hover:bg-[#333333]" />
                 </div>
+                <motion.div
+                    className="text-xs tracking-tight lg:text-sm font-inter text-zinc-300"
+                    initial={{ opacity: 0, x: -60, filter: "blur(12px)" }}
+                    whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                    Designed and Developed by Vineet 🌟
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }
 

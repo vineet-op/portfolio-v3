@@ -8,7 +8,7 @@ import { AnimatedText } from "../utils/AnimatedText";
 export default function Hero() {
 
   return (
-    <section className="flex flex-col pb-10 border-b border-dashed">
+    <section className="flex flex-col pb-10 ">
       <div className="flex flex-col lg:flex-row gap-5 p-10">
 
         {/* //Hero Image */}
@@ -44,9 +44,9 @@ export default function Hero() {
         initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="flex justify-center items-center"
+        className="flex justify-start items-center"
       >
-        <Image src={"./pacman.svg"} alt="Pacman" width={2000} height={1000} className="lg:max-w-6xl max-w-lg h-auto object-fill mx-auto px-25" />
+        <Image src={"./pacman.svg"} alt="Pacman" width={1000} height={1000} className="lg:max-w-6xl md:max-w-3xl md:px-20 h-auto object-cover px-10" />
       </motion.div>
     </section>
   );

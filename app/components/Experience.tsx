@@ -98,7 +98,7 @@ export function ExperienceCard({ imageLink, companyName, position, startDate, en
         >
             <Accordion className="p-2 md:p-4" type="single" collapsible defaultValue="item-1">
                 <AccordionItem value="experience">
-                    <AccordionTrigger className="p-2 items-start md:items-center hover:no-underline">
+                    <AccordionTrigger className="p-2  items-start md:items-center hover:no-underline">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full gap-2 md:gap-5">
                             <div className="flex flex-row items-center gap-3 md:gap-5">
                                 <Image src={imageLink} alt={companyName} width={100} height={100} className="rounded-full size-10 md:size-12 shrink-0" />
@@ -107,7 +107,7 @@ export function ExperienceCard({ imageLink, companyName, position, startDate, en
                                     <p className="text-xs md:text-sm font-inter tracking-tighter text-zinc-300">{position}</p>
                                 </div>
                             </div>
-                            <p className="text-xs md:text-sm font-inter tracking-tighter text-zinc-300 whitespace-nowrap ml-13 md:ml-0">{startDate} - {endDate}</p>
+                            <p className="text-xs md:text-sm font-inter tracking-tighter text-zinc-300 whitespace-nowrap mt-1 ml-13 md:ml-0">{startDate} - {endDate}</p>
                         </div>
                     </AccordionTrigger>
                     <AccordionContent>
