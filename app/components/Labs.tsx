@@ -43,7 +43,7 @@ export default function Labs() {
                     index={7} />
                 <LabCard title="Pricing Section Animations"
                     videoLink="/labs/PriceCard.mp4"
-                    index={7} />
+                    index={8} />
             </div>
         </motion.section>
     );
@@ -57,7 +57,7 @@ function LabCard({ title, description, videoLink, index }: { title: string; desc
             initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: 0.3 * index }}
+            transition={{ duration: 0.1, delay: 0.3 * index }}
         >
             <h3 className="text-xs md:text-sm font-medium font-inter text-muted-foreground pb-3 ml-1">{title}</h3>
             <div className="relative w-full aspect-video overflow-hidden rounded-2xl">

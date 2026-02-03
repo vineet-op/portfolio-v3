@@ -6,7 +6,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export default function Experience() {
     return (
@@ -42,10 +42,10 @@ export default function Experience() {
                     startDate="Augest 2024"
                     endDate="Present"
                     description="
-        • Developed and maintained web applications using React, Node.js, and MongoDB.
-        • Implemented responsive design and user-friendly interfaces.
-        • Collaborated with cross-functional teams to deliver high-quality software solutions.
-        • Optimized application performance and scalability."
+        • Led a frontend-focused website revamp using React/Next.js, Sanity CMS, and Framer Motion, including CMS schema refactoring, content updates, SEO optimization, animations, and a site-wide preloader for a modern, high-performance UI.
+        • Developed core frontend features including a multi-file uploader and PDF document management for vehicle-related records such as pink slips and proof of insurance.
+        • Implemented optimized search, filter, and sort functionality and revamped the Notes module UI to improve data accessibility and overall user experience.
+        • Added user preference settings for UI customization and implemented session-based logout functionality to enhance personalization and security."
                     index={0}
                 />
                 {/* <ExperienceCard
@@ -111,7 +111,7 @@ export function ExperienceCard({ imageLink, companyName, position, startDate, en
                         </div>
                     </AccordionTrigger>
                     <AccordionContent>
-                        <ul className="list-disc list-inside space-y-2 font-inter mt-3 md:mt-5 pl-2 md:pl-4 tracking-tighter text-xs md:text-sm light:text-muted-foreground">
+                        <ul className="list-disc list-inside space-y-2 font-inter mt-3 md:mt-5 pl-2 md:pl-4 tracking-tighter text-xs md:text-sm light:text-muted-foreground dark:text-muted-foreground">
                             {points.map((point, index) => (
                                 <li key={index} className="leading-relaxed">{point}</li>
                             ))}

@@ -4,6 +4,7 @@ import "./globals.css";
 import LenisProvider from "./providers/Lenis";
 import { ThemeProvider } from "./providers/ThemeProvider";
 
+
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   style: ["normal", "italic"],
@@ -33,9 +34,9 @@ export default function RootLayout({
         className={`${instrumentSerif.variable} ${inter.variable} antialiased overflow-x-hidden max-w-full`}
       >
         <ThemeProvider>
-          <LenisProvider>
-            {children}
-          </LenisProvider>
+          {/* <LenisProvider> */}
+          {children}
+          {/* </LenisProvider> */}
         </ThemeProvider>
       </body>
     </html>
