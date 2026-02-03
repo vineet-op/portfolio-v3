@@ -3,6 +3,7 @@ import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "./providers/Lenis";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import TwitterCard from "./components/TwitterCard";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -24,19 +25,19 @@ export const metadata: Metadata = {
   },
   description: "22 y/o dev based in India. I create UIs, build landing pages, and sweat the small details so the product doesn't have to. Full-stack engineer specializing in React, Next.js, and modern web development.",
   keywords: ["Vineet Jadhav", "Design Engineer", "Full-Stack Developer", "React Developer", "Next.js", "UI/UX Designer", "Frontend Developer", "Web Developer India", "CreateXp Labs"],
-  authors: [{ name: "Vineet Jadhav", url: "https://vineetjadhav.com" }],
+  authors: [{ name: "Vineet Jadhav", url: "https://vineetop.com" }],
   creator: "Vineet Jadhav",
-  metadataBase: new URL("https://vineetjadhav.com"),
+  metadataBase: new URL("https://vineetop.com"),
   openGraph: {
     title: "Vineet Jadhav - Design Engineer & Full-Stack Developer",
     description: "22 y/o dev based in India. I create UIs, build landing pages, and sweat the small details so the product doesn't have to.",
     type: "website",
-    url: "https://vineetjadhav.com",
+    url: "https://vineetop.com",
     siteName: "Vineet Jadhav Portfolio",
     locale: "en_US",
     images: [
       {
-        url: "/og.png",
+        url: "https://vineetop.com/og.png",
         width: 1200,
         height: 630,
         alt: "Vineet Jadhav - Design Engineer & Full-Stack Developer",
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     title: "Vineet Jadhav - Design Engineer",
     description: "22 y/o dev based in India. I create UIs and build landing pages.",
     creator: "@Vineet2OP",
-    images: ["/og.png"],
+    images: ["https://vineetop.com/og.png"],
   },
   robots: {
     index: true,
@@ -70,6 +71,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark overflow-x-hidden max-w-full">
+      <head>
+        <TwitterCard />
+      </head>
       <body
         className={`${instrumentSerif.variable} ${inter.variable} antialiased overflow-x-hidden max-w-full`}
       >
