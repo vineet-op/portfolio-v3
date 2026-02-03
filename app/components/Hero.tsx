@@ -31,9 +31,10 @@ export default function Hero() {
             </p>
           </div>
           {/* About me */}
-          <div className="flex flex-col font-inter justify-center items-start text-muted-foreground max-w-2xl">
+          <div className="flex flex-col font-inter justify-center items-start text-muted-foreground w-full">
             <AnimatedText
-              text="22 y/o dev based in India 💓 I refactor UIs, build landing pages, and sweating the small details so the product doesn't have to." delay={0.2}
+              className="tracking-tight w-full"
+              text="22 y/o dev based in India💓. I create UIs, and sweat the small details so the product don't have to." delay={0.2}
             />
           </div>
         </div>
@@ -44,9 +45,9 @@ export default function Hero() {
         initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="flex justify-start items-center"
+        className="flex  items-center"
       >
-        <Image src={"./pacman.svg"} alt="Pacman" width={1000} height={1000} className="lg:max-w-6xl md:max-w-3xl md:px-20 h-auto object-cover px-10" />
+        <Image src={"./pacman.svg"} alt="Pacman" width={1100} height={1000} className="lg:max-w-7xl md:max-w-4xl px-10 h-auto w-full md:px-10  object-fill justify-center items-center" />
       </motion.div>
     </section>
   );

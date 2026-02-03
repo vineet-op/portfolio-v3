@@ -16,34 +16,38 @@ export default function Labs() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
             />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:px-10 px-5">
-                <LabCard title="Card Stagger Animations"
-                    videoLink="/labs/CardStagger.mp4"
-                    index={0} />
-                <LabCard title="Scale Animations"
-                    videoLink="/labs/scale.mp4"
-                    index={1} />
-                <LabCard title="Poke Card Animations"
-                    videoLink="/labs/PokemonCard.mp4"
-                    index={2} />
-                <LabCard title="Profile Card Animations"
-                    videoLink="/labs/PC.mp4"
-                    index={3} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:px-10 px-5">
+
                 <LabCard title="Carousel Animations"
                     videoLink="/labs/Carousel.mp4"
-                    index={4} />
-                <LabCard title="Socials Icons Animations"
-                    videoLink="/labs/Social.mp4"
-                    index={5} />
-                <LabCard title="Success Badge Animations"
-                    videoLink="/labs/SuccessButton.mp4"
-                    index={6} />
+                    index={0} />
+                <LabCard title="Wallet Animations"
+                    videoLink="/labs/wallet.mp4"
+                    index={1} />
+                <LabCard title="Scale Animations"
+                    videoLink="/labs/scale.mp4"
+                    index={2} />
+                <LabCard title="Poke Card Animations"
+                    videoLink="/labs/PokemonCard.mp4"
+                    index={3} />
                 <LabCard title="Mask Hover Animations"
                     videoLink="/labs/MaskHover.mp4"
+                    index={4} />
+                <LabCard title="Card Stagger Animations"
+                    videoLink="/labs/CardStagger.mp4"
+                    index={5} />
+                <LabCard title="Socials Icons Animations"
+                    videoLink="/labs/Social.mp4"
+                    index={6} />
+                <LabCard title="Success Badge Animations"
+                    videoLink="/labs/SuccessButton.mp4"
                     index={7} />
+                <LabCard title="Profile Card Animations"
+                    videoLink="/labs/PC.mp4"
+                    index={8} />
                 <LabCard title="Pricing Section Animations"
                     videoLink="/labs/PriceCard.mp4"
-                    index={8} />
+                    index={9} />
             </div>
         </motion.section>
     );

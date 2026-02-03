@@ -3,18 +3,35 @@
 import { Moon, Sun } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTheme } from '../providers/ThemeProvider';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // Ref for the audio element to prevent repeated creation
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
   const handleToggle = () => {
     if (isAnimating) return;
+
+    // Play click sound
+    if (!audioRef.current) {
+      audioRef.current = new Audio('/click.mp3');
+    }
+    if (audioRef.current) {
+      // Reset and play even if triggered in succession
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+    }
+
     setIsAnimating(true);
-    toggleTheme();
-    // Reset animation state after animation completes
-    setTimeout(() => setIsAnimating(false), 800);
+
+    // Change theme after clip-path animation completes (covers the screen)
+    setTimeout(() => {
+      toggleTheme();
+      setIsAnimating(false);
+    }, 500); // After animation duration
   };
 
   return (
@@ -30,7 +47,7 @@ export default function ThemeToggle() {
             initial={{ clipPath: 'circle(0% at 50% 0%)' }}
             animate={{ clipPath: 'circle(150% at 50% 0%)' }}
             exit={{ clipPath: 'circle(0% at 50% 0%)' }}
-            transition={{ duration: 0.6, ease: "easeIn" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           />
         )}
       </AnimatePresence>
@@ -38,10 +55,9 @@ export default function ThemeToggle() {
       {/* Toggle button */}
       <motion.button
         onClick={handleToggle}
-        className={`absolute top-14 right-10 md:top-12 md:right-70 z-50 p-2 md:p-2 rounded-full border border-border hover:scale-110 active:scale-95 transition-transform duration-200 cursor-pointer
+        className={`absolute top-14 right-10 md:top-15 md:right-20 lg:right-70 z-50 p-2 md:p-2 rounded-full border border-border hover:scale-110 active:scale-95 transition-transform duration-200 cursor-pointer
           ${theme === 'light' ? 'bg-white' : 'bg-primary'}`}
-        whileHover={{ rotate: 180 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.2 }}
         aria-label="Toggle theme"
       >
         <AnimatePresence mode="wait">

@@ -51,14 +51,14 @@ export default function Contact() {
                         hoverColor="hover:bg-[#333333]" />
                 </div>
                 <motion.div
-                    className="text-xs tracking-tight lg:text-sm font-inter text-neutral-200 selection:bg-green-400 selection:text-gray-900 flex items-center gap-1"
+                    className="text-xs tracking-tight lg:text-sm font-inter text-muted-foreground selection:bg-green-400 selection:text-gray-900 flex items-center gap-1"
                     initial={{ opacity: 0, x: -60, filter: "blur(12px)" }}
                     whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
                 >
                     <span className="inline-block mr-1 w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_6px_2px_#4ade80]"></span>
-                    Designed and Developed by <span className="border-b border-b-green-400 border-dashed">Vineet</span>
+                    Designed and Developed by <span className="border-b border-b-green-600 border-dashed">Vineet Jadhav</span>
                 </motion.div>
             </div>
         </motion.section>
@@ -87,7 +87,7 @@ export function ContactCard({ icon, href, label, hoverColor }: ContactCardProps)
   `}
             >
                 {icon}
-                <p className="text-xs md:text-sm font-inter tracking-wide text-muted-foreground">{label}</p>
+                <p className="text-xs md:text-sm font-inter tracking-wide text-muted-foreground ">{label}</p>
             </Button>
         </a>
     );

@@ -7,14 +7,14 @@ function splitText(text: string): string[] {
     const segmenter = new Intl.Segmenter('en', { granularity: 'grapheme' });
     return Array.from(segmenter.segment(text), (segment) => segment.segment);
   }
-  
+
   // Fallback: Use regex to match emojis and regular characters
   // This regex matches emoji sequences, regular characters, and spaces
   const emojiRegex = /(\p{Emoji_Presentation}|\p{Emoji}\uFE0F?|\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|[\u{1F1E6}-\u{1F1FF}]{2})/gu;
   const parts: string[] = [];
   let lastIndex = 0;
   let match;
-  
+
   while ((match = emojiRegex.exec(text)) !== null) {
     // Add text before emoji
     if (match.index > lastIndex) {
@@ -25,13 +25,13 @@ function splitText(text: string): string[] {
     parts.push(match[0]);
     lastIndex = match.index + match[0].length;
   }
-  
+
   // Add remaining text
   if (lastIndex < text.length) {
     const remaining = text.slice(lastIndex);
     parts.push(...remaining.split(''));
   }
-  
+
   return parts.length > 0 ? parts : text.split('');
 }
 
@@ -41,7 +41,7 @@ export function AnimatedText({ text, className, delay = 0 }: { text: string; cla
 
   return (
     <motion.span
-      className={className}
+      className={` ${className || ''}`}
       initial="hidden"
       animate="visible"
       variants={{
@@ -69,7 +69,7 @@ export function AnimatedText({ text, className, delay = 0 }: { text: string; cla
               },
             },
           }}
-          style={{ display: 'inline-block' }}
+          style={{ display: 'inline-flex' }}
         >
           {segment === ' ' ? '\u00A0' : segment}
         </motion.span>
