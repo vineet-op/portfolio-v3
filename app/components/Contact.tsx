@@ -76,9 +76,15 @@ export function ContactCard({ icon, href, label, hoverColor }: ContactCardProps)
     return (
         <a href={href} target="_blank" rel="noopener noreferrer">
             <Button
-                variant="outline"
                 size="icon-sm"
-                className={`flex cursor-pointer w-fit border-dashed bg-transparent p-2 md:p-4 rounded-2xl flex-row items-center hover:scale-105 active:scale-95 transition-all duration-300 hover:text-foreground hover:border-transparent ${hoverColor}`}
+                className={`
+    bg-transparent border border-dashed
+    p-2 md:p-4 rounded-2xl w-full
+    transition-all duration-300
+    hover:scale-105 active:scale-95
+    hover:text-white hover:border-transparent
+    ${hoverColor}
+  `}
             >
                 {icon}
                 <p className="text-xs md:text-sm font-inter tracking-wide text-muted-foreground">{label}</p>
