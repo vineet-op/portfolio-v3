@@ -28,8 +28,8 @@ export default function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
             />
-            <div className="px-5 flex items-center justify-between gap-5 lg:flex-row flex-col md:px-10 lg:px-10">
-                <div className="flex flex-row justify-start lg:gap-3 gap-1.5 md:gap-4 py-2 md:py-4">
+            <div className=" flex items-center justify-between gap-5 lg:flex-row flex-col md:px-10 lg:px-10">
+                <div className="flex flex-row justify-start lg:gap-3 gap-0.5 md:gap-4 py-2 md:py-4">
                     <ContactCard
                         icon={<TwitterIcon size={24} className="text-muted-foreground" />}
                         href="https://x.com/Vineet2OP"
@@ -79,7 +79,7 @@ export function ContactCard({ icon, href, label, hoverColor }: ContactCardProps)
                 size="icon-sm"
                 className={`
     bg-transparent border border-dashed
-    p-2 md:p-4 rounded-2xl w-full
+    px-2 md:p-4 rounded-2xl w-full gap-2
     transition-all duration-300
     hover:scale-105 active:scale-95
     hover:text-white hover:border-transparent
