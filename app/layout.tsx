@@ -4,6 +4,7 @@ import "./globals.css";
 import LenisProvider from "./providers/Lenis";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import TwitterCard from "./components/TwitterCard";
+import { Analytics } from "@vercel/analytics/next"
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Vineet Jadhav - Design Engineer & Full-Stack Developer",
+    default: "Vineet Jadhav - Design Engineer",
     template: "%s | Vineet Jadhav"
   },
   description: "22 y/o dev based in India. I create UIs, build landing pages, and sweat the small details so the product doesn't have to. Full-stack engineer specializing in React, Next.js, and modern web development.",
@@ -80,6 +81,7 @@ export default function RootLayout({
         <ThemeProvider>
           {/* <LenisProvider> */}
           {children}
+          <Analytics />
           {/* </LenisProvider> */}
         </ThemeProvider>
       </body>
