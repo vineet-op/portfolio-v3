@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
-import { Github, GithubIcon, Link, X } from "lucide-react";
+import { Github, GithubIcon, Link, Link2, X } from "lucide-react";
 
 export default function Projects() {
     const [selectedProject, setSelectedProject] = useState<ProjectCardProps | null>(null);
@@ -14,28 +14,28 @@ export default function Projects() {
             description: "Prep Suite is an AI-powered mock interview platform designed to help users practice, improve, and ace technical interviews — all in one place.",
             imageLink: "/ps.png",
             githubLink: "https://github.com/vineet-op/interview-suite",
-            deployLink: "https://interview-suite.vercel.app/",
+            deployLink: "https://interviewsuite.vineetop.com/",
         },
         {
             title: "Screenshot AI",
             description: "Screenshot AI is an intelligent screenshot manager powered by AI that helps you automatically organize, categorize, and analyze your screenshots.",
             imageLink: "/ss.png",
             githubLink: "https://github.com/vineet-op/screenshot-ai",
-            deployLink: "https://screenshot-ai-iota.vercel.app/",
+            deployLink: "https://screenshots.vineetop.com/",
         },
         {
             title: "TrueFeedback",
             description: "TrueFeedback is a platform where users can provide anonymous feedback to individuals or organizations without revealing their identity.",
             imageLink: "/tr.png",
             githubLink: "https://github.com/vineet-op/Truefeedback",
-            deployLink: "https://truefeedback.vercel.app/",
+            deployLink: "https://truefeedback.vineetop.com/",
         },
         {
             title: "Matiks",
             description: "Redesign Matiks website where users can solve mental math puzzles and rank on leaderboard.",
             imageLink: "/mt.png",
             githubLink: "https://github.com/vineet-op/Matiks",
-            deployLink: "https://matiks.vercel.app/",
+            deployLink: "https://matiks.vineetop.com/",
         },
     ];
 
@@ -116,20 +116,20 @@ export default function Projects() {
 
                                 <div className="flex gap-4 mt-4">
                                     <a
+                                        href={selectedProject.deployLink}
+                                        target="_blank"
+                                        className="font-inter flex items-center gap-1 text-foreground hover:text-muted-foreground transition-colors"
+                                    >
+                                        <Link2 size={18} />
+                                        Live
+                                    </a>
+                                    <a
                                         href={selectedProject.githubLink}
                                         target="_blank"
                                         className="font-inter flex items-center gap-1 text-foreground hover:text-muted-foreground transition-colors"
                                     >
                                         <GithubIcon size={18} />
                                         GitHub
-                                    </a>
-                                    <a
-                                        href={selectedProject.deployLink}
-                                        target="_blank"
-                                        className="font-inter flex items-center gap-1 text-foreground hover:text-muted-foreground transition-colors"
-                                    >
-                                        <Link size={18} />
-                                        Live
                                     </a>
                                 </div>
                             </div>
