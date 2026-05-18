@@ -4,7 +4,8 @@ import "./globals.css";
 import LenisProvider from "./providers/Lenis";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import TwitterCard from "./components/TwitterCard";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -16,22 +17,34 @@ const instrumentSerif = Instrument_Serif({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  weight: ["400"]
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
   title: {
     default: "Vineet Jadhav - Design Engineer",
-    template: "%s | Vineet Jadhav"
+    template: "%s | Vineet Jadhav",
   },
-  description: "22 y/o dev based in India. I create UIs, build landing pages, and sweat the small details so the product doesn't have to. Full-stack engineer specializing in React, Next.js, and modern web development.",
-  keywords: ["Vineet Jadhav", "Design Engineer", "Full-Stack Developer", "React Developer", "Next.js", "UI/UX Designer", "Frontend Developer", "Web Developer India", "CreateXp Labs"],
+  description:
+    "22 y/o dev based in India. I create UIs, build landing pages, and sweat the small details so the product doesn't have to. Full-stack engineer specializing in React, Next.js, and modern web development.",
+  keywords: [
+    "Vineet Jadhav",
+    "Design Engineer",
+    "Full-Stack Developer",
+    "React Developer",
+    "Next.js",
+    "UI/UX Designer",
+    "Frontend Developer",
+    "Web Developer India",
+    "CreateXp Labs",
+  ],
   authors: [{ name: "Vineet Jadhav", url: "https://vineetop.com" }],
   creator: "Vineet Jadhav",
   metadataBase: new URL("https://vineetop.com"),
   openGraph: {
     title: "Vineet Jadhav - Design Engineer & Full-Stack Developer",
-    description: "22 y/o dev based in India. I create UIs, build landing pages, and sweat the small details so the product doesn't have to.",
+    description:
+      "22 y/o dev based in India. I create UIs, build landing pages, and sweat the small details so the product doesn't have to.",
     type: "website",
     url: "https://vineetop.com",
     siteName: "Vineet Jadhav Portfolio",
@@ -48,7 +61,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Vineet Jadhav - Design Engineer",
-    description: "22 y/o dev based in India. I create UIs and build landing pages.",
+    description:
+      "22 y/o dev based in India. I create UIs and build landing pages.",
     creator: "@Vineet2OP",
     images: ["https://vineetop.com/og.png"],
   },
@@ -79,10 +93,12 @@ export default function RootLayout({
         className={`${instrumentSerif.variable} ${inter.variable} antialiased overflow-x-hidden max-w-full`}
       >
         <ThemeProvider>
-          {/* <LenisProvider> */}
-          {children}
-          <Analytics />
-          {/* </LenisProvider> */}
+          <TooltipProvider>
+            {/* <LenisProvider> */}
+            {children}
+            <Analytics />
+            {/* </LenisProvider> */}
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

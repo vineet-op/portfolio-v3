@@ -2,8 +2,22 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { AnimatedText } from "../utils/AnimatedText";
+import { Suspense } from "react";
 
-export default function Hero() {
+import {
+  GitHubContributions,
+  GitHubContributionsFallback,
+} from "@/components/github-contributions";
+import type { Activity } from "@/components/contribution-graph";
+import { cn } from "@/lib/utils";
+
+const GITHUB_PROFILE_URL = "https://github.com/vineet-op";
+
+export default function Hero({
+  contributions,
+}: {
+  contributions: Promise<Activity[]>;
+}) {
   return (
     <section className="flex flex-col pb-10 ">
       <div className="flex flex-col lg:flex-row gap-5 p-10">
@@ -47,16 +61,23 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className="flex  items-center"
+        transition={{ duration: 0.3, delay: 0.1 }}
+        className={cn(
+          "w-full max-w-full min-w-0 px-8",
+          // GitHub Default Theme
+          '**:data-[level="0"]:fill-[#eff2f5] dark:**:data-[level="0"]:fill-[#151b23]',
+          '**:data-[level="1"]:fill-[#b6e3ff] dark:**:data-[level="1"]:fill-[#0c2d6b]',
+          '**:data-[level="2"]:fill-[#54aeff] dark:**:data-[level="2"]:fill-[#1158c7]',
+          '**:data-[level="3"]:fill-[#0969da] dark:**:data-[level="3"]:fill-[#58a6ff]',
+          '**:data-[level="4"]:fill-[#0a3069] dark:**:data-[level="4"]:fill-[#cae8ff]',
+        )}
       >
-        <Image
-          src={"./pacman.svg"}
-          alt="Pacman"
-          width={1100}
-          height={1000}
-          className="lg:max-w-7xl md:max-w-4xl px-10 h-auto w-full md:px-10  object-fill justify-center items-center"
-        />
+        <Suspense fallback={<GitHubContributionsFallback />}>
+          <GitHubContributions
+            contributions={contributions}
+            githubProfileUrl={GITHUB_PROFILE_URL}
+          />
+        </Suspense>
       </motion.div>
     </section>
   );
