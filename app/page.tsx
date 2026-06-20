@@ -1,6 +1,7 @@
 import Container from "./components/Container";
 import Hero from "./components/Hero";
 import Experience from "./components/Experience";
+import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Labs from "./components/Labs";
@@ -18,6 +19,7 @@ export default function Home() {
       <Container className="relative">
         <Hero contributions={contributions} />
         <Experience />
+        <Skills />
         <Projects />
         <Labs />
         <Contact />
