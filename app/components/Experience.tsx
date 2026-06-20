@@ -39,7 +39,7 @@ export default function Experience() {
           imageLink="/createxp.jpg"
           companyName="Createxp Labs"
           position="Full-Stack Engineer"
-          startDate="Augest 2024"
+          startDate="June 2024"
           endDate="Present"
           description="
         • Engineered 8 production CRM modules Tasks, Notes, User Management, Drivers, Vehicles, COI, Pink Slip, and
