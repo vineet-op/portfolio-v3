@@ -35,7 +35,7 @@ export default function Labs() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:px-10 px-5">
+      <div className="grid grid-cols-1 gap-6 lg:px-10 px-5">
         {labs.map((lab, index) => (
           <LabCard
             key={lab.videoLink}
