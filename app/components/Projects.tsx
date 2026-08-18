@@ -11,6 +11,14 @@ export default function Projects() {
 
   const projects: ProjectCardProps[] = [
     {
+      title: "Context Vault",
+      description:
+        "Context Vault is a RAG application where user can store, manage and query their context data.",
+      imageLink: "/contextvault.png",
+      githubLink: "https://github.com/vineet-op/multi-space-rag",
+      deployLink: "https://multi-space-rag.vercel.app/",
+    },
+    {
       title: "VUI",
       description:
         "Custom components library build on top of shadcn tailwind and motion.",

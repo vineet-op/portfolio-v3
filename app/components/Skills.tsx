@@ -20,6 +20,11 @@ import {
   siVercel,
   siCursor,
   siClaude,
+  siLangchain,
+  siLanggraph,
+  siN8n,
+  siAnthropic,
+  siOpenaigym,
 } from "simple-icons";
 
 interface Skill {
@@ -56,6 +61,7 @@ const skillCategories: SkillCategory[] = [
       { name: "Node.js", icon: siNodedotjs },
       { name: "Express.js", icon: siExpress },
       { name: "MongoDB", icon: siMongodb },
+      { name: "Sanity", icon: siSanity },
     ],
   },
   {
@@ -63,11 +69,20 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "GitHub", icon: siGithub },
       { name: "Git", icon: siGit },
-      { name: "Sanity", icon: siSanity },
       { name: "Figma", icon: siFigma },
       { name: "Vercel", icon: siVercel },
       { name: "Cursor", icon: siCursor },
       { name: "Claude", icon: siClaude },
+    ],
+  },
+  {
+    title: "AI",
+    skills: [
+      { name: "RAG", icon: siOpenaigym },
+      { name: "LLM API", icon: siAnthropic },
+      { name: "LangChain", icon: siLangchain },
+      { name: "LangGraph", icon: siLanggraph },
+      { name: "n8n", icon: siN8n },
     ],
   },
 ];
@@ -211,7 +226,7 @@ export default function Skills() {
       />
 
       <div className="px-5 md:px-10 lg:px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-10">
           {skillCategories.map((category, index) => (
             <SkillCategoryBlock
               key={category.title}

@@ -43,8 +43,8 @@ export default function Hero({
             <h1 className="font-serif text-3xl">
               <AnimatedText text="Hello there👋" />
             </h1>
-            <p className="font-serif text-2xl md:text-4xl">
-              <AnimatedText text="I'm Vineet Design Engineer" />
+            <p className="font-serif text-2xl md:text-3xl">
+              <AnimatedText text="I'm Vineet Software Engineer" />
             </p>
           </div>
           {/* About me */}
